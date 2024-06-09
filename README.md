@@ -1,10 +1,14 @@
 <p align="center">
-<!-- <a href="https://badge.fury.io/py/yapf"><img alt="PyPI Version" src="https://badge.fury.io/py/yapf.svg"></a> -->
 <a href="https://github.com/google/yapf/actions/workflows/pre-commit.yml"><img alt="Actions Status" src="https://github.com/google/yapf/actions/workflows/pre-commit.yml/badge.svg"></a>
-
 </p>
 
+
+<div align="center">
+
 English | [简体中文](README_zh-CN.md)
+
+</div>
+
 ## Introduction
 BinarySOSMetrics(Binary Small Object Segmentation Metrics) is a library of evaluation metrics toolbox for infrared small target segmentation tasks.
 

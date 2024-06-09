@@ -1,13 +1,14 @@
 <p align="center">
-<!-- <a href="https://badge.fury.io/py/yapf"><img alt="PyPI Version" src="https://badge.fury.io/py/yapf.svg"></a> -->
 <a href="https://github.com/google/yapf/actions/workflows/pre-commit.yml"><img alt="Actions Status" src="https://github.com/google/yapf/actions/workflows/pre-commit.yml/badge.svg"></a>
-
 </p>
 
 
 
+<div align="center">
+
 [English](README.md) | 简体中文
 
+</div>
 
 ## 简介
 
