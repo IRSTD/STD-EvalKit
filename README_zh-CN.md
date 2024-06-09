@@ -81,9 +81,8 @@ BinarySOSMetrics(Binary Small Object Segmentation Metrics) 是一个用于红外
 
 ## 安装
 ```bash
-git clone 
+git clone git@github.com:BinarySOS/BinarySOSMetrics.git
 ```
-
 ```bash
 cd BinarySOSMetrics
 ```

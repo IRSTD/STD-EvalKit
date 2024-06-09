@@ -6,9 +6,9 @@
 
 English | [简体中文](README_zh-CN.md)
 ## Introduction
-BinarySOSMetrics(Binary Small Object Segmentation Metrics) is a library of evaluation metrics toolbox for infrared small target segmentation tasks.  
+BinarySOSMetrics(Binary Small Object Segmentation Metrics) is a library of evaluation metrics toolbox for infrared small target segmentation tasks.
 
-We statistics the evaluation metrics in the field of infrared small target segmentation in recent years([statistical results](https://github.com/BinarySOS/StatisticsOnEvaluationMetrics)). 
+We statistics the evaluation metrics in the field of infrared small target segmentation in recent years([statistical results](https://github.com/BinarySOS/StatisticsOnEvaluationMetrics)).
 <details open>
 <summary>Major features</summary>
 
@@ -83,6 +83,9 @@ Based on the data required for the calculation of the evaluation metrics, we hav
 </table>
 
 ## Installation
+```bash
+git clone git@github.com:BinarySOS/BinarySOSMetrics.git
+```
 ```bash
 cd BinarySOSMetrics
 ```
