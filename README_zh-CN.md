@@ -16,18 +16,23 @@ BinarySOSMetrics(Binary Small Object Segmentation Metrics) 是一个用于红外
 <summary>主要特性</summary>
 
 - **速度快**
+
     对于只能单张图像迭代计算的评价指标我们都实现了多线程版本。
 
 - **设备友好**
+
     所有的指标均支持批次的自动累积。
 
 - **接口统一**
+
     所有的指标提供相同的接口,`Metric.update(labels, preds)`完成批次的累积， `Metric.get()`操作完成指标的计算。
 
 - **计算统一**
+
     同一类型的指标，我们使用了相同的计算逻辑与算法，保证了结果间的一致性。
 
 - **支持的数据类型丰富**
+
     支持多种输入数据类型，hwc/chw/bchw/bhwc/image path 等, 具体的类型与使用方式见<div> <a href="./notebook/tutorials.ipynb">./notebook/tutorial.ipynb</a></div>
 
 
