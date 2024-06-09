@@ -1,0 +1,7 @@
+*.pyc
+/__pycache__
+/.history
+*.egg-info
+/.vscode
+*.ipynb
+!/notebook/*.ipynb
