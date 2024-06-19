@@ -54,35 +54,36 @@ BinarySOSMetrics(Binary Small Object Segmentation Metrics) 是一个用于红外
       <td>
         <b>像素级</b>
       </td>
-      <td>
+        <td colspan="2">
         <b>目标级</b>
       </td>
-      <td>
-        <b>混合型</b>
-      </td>
     </tr>
-    <tr valign="top">
-      <td>
+    <tr valign="top" valign="bottom">
+      <td rowspan="2">
         <ul>
             <li><a href="sosmetrics/metrics/pixel_auc_roc_ap_pr.py">AUC ROC AP PR</a></li>
             <li><a href="sosmetrics/metrics/pixel_pre_rec_f1_iou.py">Precision Recall F1 IoU (DOI:10.1109/TAES.2023.3238703)</a></li>
             <li><a href="sosmetrics/metrics/pixel_normalized_iou.py">NormalizedIoU (DOI:10.1109/WACV48630.2021.00099)</a></li>
       </ul>
       </td>
+        <td align="center"><b>质心级</b></td>
+        <td align="center"><b>Box级</b></td>
+    <tr valign="top">
       <td>
         <ul>
-          <li><a href="sosmetrics/metrics/target_pre_rec_f1.py">Precision Recall F1(DOI:10.1109/TAES.2022.3159308)</a></li>
-                    <li><a href="sosmetrics/metrics/target_ap.py">AveragePrecision</a></li>
-        </ul>
-      </td>
-      <td>
-        <ul>
-          <li><a href="sosmetrics/metrics/hybrid_pd_fa.py">Pd_Fa (DOI:10.1109/TIP.2022.3199107)</a></li>
+          <li><a href="sosmetrics/metrics/target_pre_rec_f1.py">Precision Recall F1 (DOI:10.1109/TAES.2022.3159308)</a></li>
+                    <li><a href="sosmetrics/metrics/target_ap.py">Average Precision</a></li>
+            <li><a href="sosmetrics/metrics/hybrid_pd_fa.py">Pd_Fa (DOI:10.1109/TIP.2022.3199107)</a></li>
             <li><a href="sosmetrics/metrics/hybrid_roc_pd_fa.py">ROC Pd_Fa</a></li>
             <li><a href="sosmetrics/metrics/hybrid_normalized_iou.py">Target Normalized IoU (Ours)</a></li>
         </ul>
       </td>
-    </tr>
+      <td>
+        <ul>
+            <li><a href="sosmetrics/metrics/box_level/box_mean_ap_ar.py">Mean Average Precision, Recall (COCO)</a></li>
+        </ul>
+      </td>
+
 </td>
     </tr>
   </tbody>

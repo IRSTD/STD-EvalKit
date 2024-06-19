@@ -52,32 +52,33 @@ Based on the data required for the calculation of the evaluation metrics, we hav
       <td>
         <b>Pixel Level</b>
       </td>
-      <td>
+      <td colspan="2">
         <b>Target Level</b>
       </td>
-      <td>
-        <b>Hybrid</b>
-      </td>
     </tr>
-    <tr valign="top">
-      <td>
+    <tr valign="top" valign="bottom">
+      <td rowspan="2">
         <ul>
             <li><a href="sosmetrics/metrics/pixel_auc_roc_ap_pr.py">AUC ROC AP PR</a></li>
             <li><a href="sosmetrics/metrics/pixel_pre_rec_f1_iou.py">Precision Recall F1 IoU (DOI:10.1109/TAES.2023.3238703)</a></li>
             <li><a href="sosmetrics/metrics/pixel_normalized_iou.py">NormalizedIoU (DOI:10.1109/WACV48630.2021.00099)</a></li>
       </ul>
       </td>
+        <td align="center"><b>Center-Level</b></td>
+        <td align="center"><b>Box Level</b></td>
+    <tr valign="top">
       <td>
         <ul>
-          <li><a href="sosmetrics/metrics/target_pre_rec_f1.py">Precision Recall F1(DOI:10.1109/TAES.2022.3159308)</a></li>
-                    <li><a href="sosmetrics/metrics/target_ap.py">AveragePrecision(Ours)</a></li>
+          <li><a href="sosmetrics/metrics/target_pre_rec_f1.py">Precision Recall F1 (DOI:10.1109/TAES.2022.3159308)</a></li>
+                    <li><a href="sosmetrics/metrics/target_ap.py">Average Precision (Ours)</a></li>
+            <li><a href="sosmetrics/metrics/hybrid_pd_fa.py">Pd_Fa (DOI:10.1109/TIP.2022.3199107)</a></li>
+            <li><a href="sosmetrics/metrics/hybrid_roc_pd_fa.py">ROC Pd_Fa</a></li>
+            <li><a href="sosmetrics/metrics/hybrid_normalized_iou.py">Target Normalized IoU (Ours)</a></li>
         </ul>
       </td>
       <td>
         <ul>
-          <li><a href="sosmetrics/metrics/hybrid_pd_fa.py">Pd_Fa (DOI:10.1109/TIP.2022.3199107)</a></li>
-            <li><a href="sosmetrics/metrics/hybrid_roc_pd_fa.py">ROC Pd_Fa</a></li>
-            <li><a href="sosmetrics/metrics/hybrid_normalized_iou.py">Target Normalized IoU (Ours)</a></li>
+            <li><a href="sosmetrics/metrics/box_level/box_mean_ap_ar.py">Mean Average Precision, Recall (COCO)</a></li>
         </ul>
       </td>
     </tr>

@@ -1,4 +1,5 @@
 from .base import BaseMetric, time_cost_deco
+from .box_level import BoxLevelMeanAveragePrecision
 from .hybrid_normalized_iou import HybridNormalizedIoU
 from .hybrid_pd_fa import TargetPdPixelFa
 from .hybrid_roc_pd_fa import TargetPdPixelFaROC
