@@ -7,7 +7,7 @@ from prettytable import PrettyTable
 from torch import Tensor
 from torchmetrics.detection import MeanAveragePrecision
 
-from sosmetrics.metrics import BaseMetric, time_cost_deco
+from stdeval.metrics import BaseMetric, time_cost_deco
 
 
 class BoxLevelMeanAveragePrecision(MeanAveragePrecision, BaseMetric):

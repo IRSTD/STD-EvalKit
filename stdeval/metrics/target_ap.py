@@ -42,7 +42,7 @@ class TargetAveragePrecision(TargetPrecisionRecallF1):
                 - If set to an 1d `array` of floats, will use the indicated thresholds in the array as
                     conf_thrs for the calculation.
 
-            Other parameters are the same as sosmetrics.metrics.TargetPrecisionRecallF1.
+            Other parameters are the same as stdeval.metrics.TargetPrecisionRecallF1.
         """
 
         self.conf_thrs = _adjust_conf_thr_arg(conf_thrs)

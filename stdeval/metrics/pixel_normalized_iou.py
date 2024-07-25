@@ -5,9 +5,9 @@ import numpy as np
 import pandas as pd
 from prettytable import PrettyTable
 
-from sosmetrics.metrics import BaseMetric, time_cost_deco
-from sosmetrics.metrics.utils import (_TYPES, _safe_divide, convert2format,
-                                      convert2gray)
+from stdeval.metrics import BaseMetric, time_cost_deco
+from stdeval.metrics.utils import (_TYPES, _safe_divide, convert2format,
+                                   convert2gray)
 
 
 class PixelNormalizedIoU(BaseMetric):

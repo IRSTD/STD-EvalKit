@@ -107,20 +107,14 @@ def convert2format(labels: _TYPES, preds: _TYPES) -> Tuple[Iterable, Iterable]:
         labels = cv2.imread(labels)
         labels = (labels > 0).astype('uint8')
         # bwc in np.uint8, -> probability image from 0-1.
-        preds = cv2.imread(preds)/ 255.
+        preds = cv2.imread(preds) / 255.
         labels = [labels]
         preds = [preds]
 
     elif isinstance(labels, list) and isinstance(labels[0], str):
-        labels = [
-            (cv2.imread(label)>0).astype('uint8')
-            for label in labels
-        ]
-        
-        preds = [
-            cv2.imread(pred)/ 255.
-            for pred in preds
-        ]
+        labels = [(cv2.imread(label) > 0).astype('uint8') for label in labels]
+
+        preds = [cv2.imread(pred) / 255. for pred in preds]
 
     elif isinstance(labels, list) and isinstance(labels[0],
                                                  (np.ndarray, torch.Tensor)):
@@ -159,7 +153,6 @@ def convert2format(labels: _TYPES, preds: _TYPES) -> Tuple[Iterable, Iterable]:
         labels = np.stack(labels, axis=0)
         preds = np.stack(preds, axis=0)
     return labels, preds
-
 
 
 def convert2gray(image: np.ndarray) -> np.ndarray:

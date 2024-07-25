@@ -23,7 +23,7 @@ class TargetPdPixelFaROC(TargetPdPixelFa):
                  second_match: str = 'none',
                  **kwargs: Any):
         """Calculation of ROC using TargetPdPixelFa.
-            More details can be found at sosmetrics.metrics.TargetPdPixelFa.
+            More details can be found at stdeval.metrics.TargetPdPixelFa.
 
         Args:
             conf_thrs (Union[int, List[float], np.ndarray]): Confidence thresholds.
