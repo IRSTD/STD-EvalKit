@@ -6,13 +6,12 @@ import pandas as pd
 from prettytable import PrettyTable
 
 from stdeval.metrics import time_cost_deco
+from stdeval.metrics.pixel_level.pixel_normalized_iou import PixelNormalizedIoU
 from stdeval.metrics.utils import (_TYPES, _adjust_dis_thr_arg, _safe_divide,
                                    calculate_target_infos, convert2format,
                                    get_label_coord_and_gray,
                                    get_pred_coord_and_gray,
                                    second_match_method)
-
-from .pixel_normalized_iou import PixelNormalizedIoU
 
 
 class HybridNormalizedIoU(PixelNormalizedIoU):

@@ -9,8 +9,8 @@ from sklearn.metrics import auc
 from torchmetrics.classification import (BinaryAveragePrecision,
                                          BinaryPrecisionRecallCurve, BinaryROC)
 
-from .base import BaseMetric, time_cost_deco
-from .utils import _TYPES, convert2format
+from stdeval.metrics.base import BaseMetric, time_cost_deco
+from stdeval.metrics.utils import _TYPES, convert2format
 
 
 # codespell:ignore fpr

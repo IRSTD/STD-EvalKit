@@ -6,8 +6,8 @@ import pandas as pd
 from prettytable import PrettyTable
 from sklearn.metrics import confusion_matrix
 
-from .base import BaseMetric, time_cost_deco
-from .utils import _TYPES, _safe_divide, convert2format
+from stdeval.metrics import BaseMetric, time_cost_deco
+from stdeval.metrics.utils import _TYPES, _safe_divide, convert2format
 
 
 class PixelPrecisionRecallF1IoU(BaseMetric):

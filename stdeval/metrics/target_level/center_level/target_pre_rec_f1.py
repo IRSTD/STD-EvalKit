@@ -5,11 +5,12 @@ import numpy as np
 import pandas as pd
 from prettytable import PrettyTable
 
-from .base import BaseMetric, time_cost_deco
-from .utils import (_TYPES, _adjust_dis_thr_arg, _safe_divide,
-                    calculate_target_infos, convert2format,
-                    get_label_coord_and_gray, get_pred_coord_and_gray,
-                    second_match_method)
+from stdeval.metrics.base import BaseMetric, time_cost_deco
+from stdeval.metrics.utils import (_TYPES, _adjust_dis_thr_arg, _safe_divide,
+                                   calculate_target_infos, convert2format,
+                                   get_label_coord_and_gray,
+                                   get_pred_coord_and_gray,
+                                   second_match_method)
 
 
 class TargetPrecisionRecallF1(BaseMetric):

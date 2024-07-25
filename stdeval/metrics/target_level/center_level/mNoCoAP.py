@@ -9,7 +9,7 @@ from prettytable import PrettyTable
 from skimage import measure as skm
 from torchvision import transforms
 
-from .base import BaseMetric, time_cost_deco
+from stdeval.metrics.base import BaseMetric, time_cost_deco
 
 # cSpell:ignore noco, nocoap, nproc, ridx, cind, rmin, cmin, rmax, cmax, rmin_ind
 # cSpell:ignore cmin_ind, rmax_ind, cmax_ind, unb_bg_rmin, unb_bg_rmax, ndim, dets
