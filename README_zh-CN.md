@@ -10,11 +10,12 @@
 
 </div>
 
+![framework](./resources/framework.svg)
+
 ## 简介
 
-BinarySOSMetrics(Binary Small Object Segmentation Metrics) 是一个用于红外小目标分割任务的评价指标工具库。
-我们统计了近年来红外小目标分割领域的评价指标([统计结果](https://github.com/BinarySOS/StatisticsOnEvaluationMetrics)
-)，并实现了其中最常用的部分指标。
+STD EvalKit (Small Target Detection Evaluation Kit)是一个用于红外小目标分割任务的评价指标工具库。
+我们统计了近年来红外小目标分割领域的评价指标([统计结果](https://github.com/IRSTD/StatOnEvalMetrics))，并实现了其中最常用的部分指标。
 
 <details open>
 <summary>主要特性</summary>
@@ -61,9 +62,9 @@ BinarySOSMetrics(Binary Small Object Segmentation Metrics) 是一个用于红外
     <tr valign="top" valign="bottom">
       <td rowspan="2">
         <ul>
-            <li><a href="sosmetrics/metrics/pixel_auc_roc_ap_pr.py">AUC ROC AP PR</a></li>
-            <li><a href="sosmetrics/metrics/pixel_pre_rec_f1_iou.py">Precision Recall F1 IoU (DOI:10.1109/TAES.2023.3238703)</a></li>
-            <li><a href="sosmetrics/metrics/pixel_normalized_iou.py">NormalizedIoU (DOI:10.1109/WACV48630.2021.00099)</a></li>
+            <li><a href="stdeval/metrics/pixel_auc_roc_ap_pr.py">AUC ROC AP PR</a></li>
+            <li><a href="stdeval/metrics/pixel_pre_rec_f1_iou.py">Precision Recall F1 IoU (DOI:10.1109/TAES.2023.3238703)</a></li>
+            <li><a href="stdeval/metrics/pixel_normalized_iou.py">NormalizedIoU (DOI:10.1109/WACV48630.2021.00099)</a></li>
       </ul>
       </td>
         <td align="center"><b>质心级</b></td>
@@ -71,16 +72,16 @@ BinarySOSMetrics(Binary Small Object Segmentation Metrics) 是一个用于红外
     <tr valign="top">
       <td>
         <ul>
-          <li><a href="sosmetrics/metrics/target_pre_rec_f1.py">Precision Recall F1 (DOI:10.1109/TAES.2022.3159308)</a></li>
-                    <li><a href="sosmetrics/metrics/target_ap.py">Average Precision</a></li>
-            <li><a href="sosmetrics/metrics/hybrid_pd_fa.py">Pd_Fa (DOI:10.1109/TIP.2022.3199107)</a></li>
-            <li><a href="sosmetrics/metrics/hybrid_roc_pd_fa.py">ROC Pd_Fa</a></li>
-            <li><a href="sosmetrics/metrics/hybrid_normalized_iou.py">Target Normalized IoU (Ours)</a></li>
+          <li><a href="stdeval/metrics/target_pre_rec_f1.py">Precision Recall F1 (DOI:10.1109/TAES.2022.3159308)</a></li>
+                    <li><a href="stdeval/metrics/target_ap.py">Average Precision</a></li>
+            <li><a href="stdeval/metrics/hybrid_pd_fa.py">Pd_Fa (DOI:10.1109/TIP.2022.3199107)</a></li>
+            <li><a href="stdeval/metrics/hybrid_roc_pd_fa.py">ROC Pd_Fa</a></li>
+            <li><a href="stdeval/metrics/hybrid_normalized_iou.py">Target Normalized IoU (Ours)</a></li>
         </ul>
       </td>
       <td>
         <ul>
-            <li><a href="sosmetrics/metrics/box_level/box_mean_ap_ar.py">Mean Average Precision, Recall (COCO)</a></li>
+            <li><a href="stdeval/metrics/box_level/box_mean_ap_ar.py">Mean Average Precision, Recall (COCO)</a></li>
         </ul>
       </td>
 
@@ -91,10 +92,10 @@ BinarySOSMetrics(Binary Small Object Segmentation Metrics) 是一个用于红外
 
 ## 安装
 ```bash
-git clone git@github.com:BinarySOS/BinarySOSMetrics.git
+git clone git@github.com:IRSTD/STD-EvalKit.git
 ```
 ```bash
-cd BinarySOSMetrics
+cd STD-EvalKit
 ```
 开发者模式安装(可以更方便的debug)
 ```bash
@@ -102,13 +103,13 @@ pip install -e .
 ```
 或者只使用
 ```bash
-pip install sosmetrics
+pip install stdeval
 ```
 
 
 ## 教程
 ```python
-from sosmetrics.metrics import PixelPrecisionRecallF1IoU
+from stdeval.metrics import PixelPrecisionRecallF1IoU
 Metric = PixelPrecisionRecallF1IoU(
     conf_thr=0.5,
     )

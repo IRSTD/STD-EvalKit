@@ -9,10 +9,15 @@ English | [简体中文](README_zh-CN.md)
 
 </div>
 
-## Introduction
-BinarySOSMetrics(Binary Small Object Segmentation Metrics) is a library of evaluation metrics toolbox for infrared small target segmentation tasks.
+![framework](./resources/framework.svg)
 
-We statistics the evaluation metrics in the field of infrared small target segmentation in recent years([statistical results](https://github.com/BinarySOS/StatisticsOnEvaluationMetrics)).
+## Introduction
+
+STD EvalKit (Small Target Detection Evaluation Kit) is a library of evaluation metrics toolbox for infrared small target segmentation tasks.
+
+We statistics the evaluation metrics in the field of infrared small target segmentation in recent years([statistical results](https://github.com/IRSTD/StatOnEvalMetrics)).
+
+
 <details open>
 <summary>Major features</summary>
 
@@ -59,9 +64,9 @@ Based on the data required for the calculation of the evaluation metrics, we hav
     <tr valign="top" valign="bottom">
       <td rowspan="2">
         <ul>
-            <li><a href="sosmetrics/metrics/pixel_auc_roc_ap_pr.py">AUC ROC AP PR</a></li>
-            <li><a href="sosmetrics/metrics/pixel_pre_rec_f1_iou.py">Precision Recall F1 IoU (DOI:10.1109/TAES.2023.3238703)</a></li>
-            <li><a href="sosmetrics/metrics/pixel_normalized_iou.py">NormalizedIoU (DOI:10.1109/WACV48630.2021.00099)</a></li>
+            <li><a href="stdeval/metrics/pixel_auc_roc_ap_pr.py">AUC ROC AP PR</a></li>
+            <li><a href="stdeval/metrics/pixel_pre_rec_f1_iou.py">Precision Recall F1 IoU (DOI:10.1109/TAES.2023.3238703)</a></li>
+            <li><a href="stdeval/metrics/pixel_normalized_iou.py">NormalizedIoU (DOI:10.1109/WACV48630.2021.00099)</a></li>
       </ul>
       </td>
         <td align="center"><b>Center-Level</b></td>
@@ -69,16 +74,16 @@ Based on the data required for the calculation of the evaluation metrics, we hav
     <tr valign="top">
       <td>
         <ul>
-          <li><a href="sosmetrics/metrics/target_pre_rec_f1.py">Precision Recall F1 (DOI:10.1109/TAES.2022.3159308)</a></li>
-                    <li><a href="sosmetrics/metrics/target_ap.py">Average Precision (Ours)</a></li>
-            <li><a href="sosmetrics/metrics/hybrid_pd_fa.py">Pd_Fa (DOI:10.1109/TIP.2022.3199107)</a></li>
-            <li><a href="sosmetrics/metrics/hybrid_roc_pd_fa.py">ROC Pd_Fa</a></li>
-            <li><a href="sosmetrics/metrics/hybrid_normalized_iou.py">Target Normalized IoU (Ours)</a></li>
+          <li><a href="stdeval/metrics/target_pre_rec_f1.py">Precision Recall F1 (DOI:10.1109/TAES.2022.3159308)</a></li>
+                    <li><a href="stdeval/metrics/target_ap.py">Average Precision (Ours)</a></li>
+            <li><a href="stdeval/metrics/hybrid_pd_fa.py">Pd_Fa (DOI:10.1109/TIP.2022.3199107)</a></li>
+            <li><a href="stdeval/metrics/hybrid_roc_pd_fa.py">ROC Pd_Fa</a></li>
+            <li><a href="stdeval/metrics/hybrid_normalized_iou.py">Target Normalized IoU (Ours)</a></li>
         </ul>
       </td>
       <td>
         <ul>
-            <li><a href="sosmetrics/metrics/box_level/box_mean_ap_ar.py">Mean Average Precision, Recall (COCO)</a></li>
+            <li><a href="stdeval/metrics/box_level/box_mean_ap_ar.py">Mean Average Precision, Recall (COCO)</a></li>
         </ul>
       </td>
     </tr>
@@ -89,10 +94,10 @@ Based on the data required for the calculation of the evaluation metrics, we hav
 
 ## Installation
 ```bash
-git clone git@github.com:BinarySOS/BinarySOSMetrics.git
+git clone git@github.com:IRSTD/STD-EvalKit.git
 ```
 ```bash
-cd BinarySOSMetrics
+cd STD-EvalKit
 ```
 For developers(recommended, easy for debugging)
 ```bash
@@ -100,13 +105,13 @@ pip install -e .
 ```
 Only use
 ```bash
-pip install sosmetrics
+pip install stdeval
 ```
 
 
 ## Tutorial
 ```python
-from sosmetrics.metrics import PixelPrecisionRecallF1IoU
+from stdeval.metrics import PixelPrecisionRecallF1IoU
 Metric = PixelPrecisionRecallF1IoU(
     conf_thr=0.5,
     )
