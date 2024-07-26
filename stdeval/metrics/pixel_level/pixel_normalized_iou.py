@@ -18,7 +18,7 @@ class PixelNormalizedIoU(BaseMetric):
 
         Paper:
             @inproceedings{dai21acm,
-            title   =  {Asymmetric Contextual Modulation for Infrared Small Target Detection},
+            title   =  {Asymmetric Contextual Modulation for Infrared Small Center Detection},
             author  =  {Yimian Dai and Yiquan Wu and Fei Zhou and Kobus Barnard},
             booktitle =  {{IEEE} Winter Conference on Applications of Computer Vision, {WACV} 2021}
             year    =  {2021}

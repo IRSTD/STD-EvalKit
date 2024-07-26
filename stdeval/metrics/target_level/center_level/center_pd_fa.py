@@ -14,7 +14,7 @@ from stdeval.metrics.utils import (_TYPES, _adjust_dis_thr_arg, _safe_divide,
                                    second_match_method)
 
 
-class TargetPdPixelFa(BaseMetric):
+class CenterPdPixelFa(BaseMetric):
 
     def __init__(self,
                  conf_thr: float = 0.5,
@@ -23,7 +23,7 @@ class TargetPdPixelFa(BaseMetric):
                  second_match: str = 'none',
                  **kwargs: Any):
         """
-        Target Level Pd and Pixel Level Fa.
+        Center Level Pd and Pixel Level Fa.
         Original Code: https://github.com/XinyiYing/BasicIRSTD/blob/main/metrics.py
 
         Paper:
@@ -31,7 +31,7 @@ class TargetPdPixelFa(BaseMetric):
             author={Li, Boyang and Xiao, Chao and Wang, Longguang and Wang, Yingqian and Lin, \
                 Zaiping and Li, Miao and An, Wei and Guo, Yulan},
             journal={IEEE Transactions on Image Processing},
-            title={Dense Nested Attention Network for Infrared Small Target Detection},
+            title={Dense Nested Attention Network for Infrared Small Center Detection},
             year={2023},
             volume={32},
             number={},
@@ -46,7 +46,7 @@ class TargetPdPixelFa(BaseMetric):
             2. Supports secondary matching using mask iou.
 
         Original setting in above Paper:
-            TargetPdPixelFa(
+            CenterPdPixelFa(
                         conf_thr=0.5,
                         dis_thrs=[1,10],
                         match_alg='forloop',
@@ -61,7 +61,7 @@ class TargetPdPixelFa(BaseMetric):
 
                 TD: Number of correctly predicted targets, \
                     GT is positive and Pred is positive, like TP.
-                AT: All Targets, Number of target in GT, like TP + FN.
+                AT: All Centers, Number of target in GT, like TP + FN.
                 PD: Probability of Detection, PD =TD/AT, like Recall = TP/(TP+FN).
                 NP: All image Pixels, NP = H*W*num_gt_img.
                 FD: The numbers of falsely predicted pixels, dismatch pixel, \

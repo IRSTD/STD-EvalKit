@@ -21,7 +21,7 @@ class PixelPrecisionRecallF1IoU(BaseMetric):
             author={Zhang, Tianfang and Li, Lei and Cao, Siying and Pu, Tian and Peng, Zhenming},
             journal={IEEE Transactions on Aerospace and Electronic Systems},
             title={Attention-Guided Pyramid Context Networks for Detecting \
-                Infrared Small Target Under Complex Background},
+                Infrared Small Center Under Complex Background},
             year={2023},
             volume={59},
             number={4},

@@ -10,7 +10,7 @@ from torchmetrics.detection import MeanAveragePrecision
 from stdeval.metrics import BaseMetric, time_cost_deco
 
 
-class BoxLevelMeanAveragePrecision(MeanAveragePrecision, BaseMetric):
+class BoxAveragePrecision(MeanAveragePrecision, BaseMetric):
 
     def __init__(self,
                  box_format='xyxy',
@@ -58,7 +58,7 @@ class BoxLevelMeanAveragePrecision(MeanAveragePrecision, BaseMetric):
                 )
                 ]
                 classwise = {0:'person', 1:'car', 2:'tea', 3:'cycle'} # lbl id 2 name
-                metric = BoxLevelMetric(iou_type="bbox", class_metrics=True, classwise=classwise)
+                metric = BoxAveragePrecision(iou_type="bbox", class_metrics=True, classwise=classwise)
                 metric.update(target, preds)
                 metric.get()
                 metric.table

@@ -14,7 +14,7 @@ from stdeval.metrics.utils import (_TYPES, _adjust_dis_thr_arg, _safe_divide,
                                    second_match_method)
 
 
-class HybridNormalizedIoU(PixelNormalizedIoU):
+class CenterNormalizedIoU(PixelNormalizedIoU):
 
     def __init__(self,
                  conf_thr: float = 0.5,

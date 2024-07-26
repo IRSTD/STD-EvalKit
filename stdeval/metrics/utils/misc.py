@@ -84,7 +84,7 @@ def convert2format(labels: _TYPES, preds: _TYPES) -> Tuple[Iterable, Iterable]:
         ValueError: _description_
 
     Returns:
-        Tuple[Iterable, Iterable]:  labels, preds in Iterable format.
+        Tuple[Iterable, Iterable]:  labels, preds in Iterable format, type(element) is np.ndarray.
     """
     if isinstance(labels, (np.ndarray, torch.Tensor)):
         if isinstance(labels, torch.Tensor):

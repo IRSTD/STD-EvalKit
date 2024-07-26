@@ -13,7 +13,7 @@ from stdeval.metrics.utils import (_TYPES, _adjust_dis_thr_arg, _safe_divide,
                                    second_match_method)
 
 
-class TargetPrecisionRecallF1(BaseMetric):
+class CenterPrecisionRecallF1(BaseMetric):
 
     def __init__(self,
                  conf_thr: float = 0.5,
@@ -21,7 +21,7 @@ class TargetPrecisionRecallF1(BaseMetric):
                  match_alg: str = 'forloop',
                  second_match: str = 'none',
                  **kwargs: Any):
-        """Target-Level.
+        """Center-Level.
         TP: True Positive, GT is Positive and Pred is Positive, If Euclidean Distance < threshold, matched.
         FN: False Negative, GT is Positive and Pred is Negative.
         FP: False Positive, GT is Negative and Pred is Positive. If Euclidean Distance > threshold, not matched.

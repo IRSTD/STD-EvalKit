@@ -1,4 +1,4 @@
-from .metrics import (HybridNormalizedIoU, PixelNormalizedIoU,
-                      PixelPrecisionRecallF1IoU, PixelROCPrecisionRecall,
-                      TargetAveragePrecision, TargetPdPixelFa,
-                      TargetPrecisionRecallF1)
+from .metrics import (BoxAveragePrecision, CenterAveragePrecision,
+                      CenterNormalizedIoU, CenterPdPixelFa, CenterPdPixelFaROC,
+                      CenterPrecisionRecallF1, PixelNormalizedIoU,
+                      PixelPrecisionRecallF1IoU, PixelROCPrecisionRecall)

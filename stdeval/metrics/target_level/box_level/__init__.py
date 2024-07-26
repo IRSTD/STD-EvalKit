@@ -1,1 +1,1 @@
-from .box_mean_ap_ar import BoxLevelMeanAveragePrecision
+from .box_mean_ap_ar import BoxAveragePrecision

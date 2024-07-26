@@ -13,10 +13,10 @@ from stdeval.metrics.utils import (_TYPES, _adjust_conf_thr_arg, _safe_divide,
                                    get_pred_coord_and_gray,
                                    second_match_method)
 
-from .hybrid_pd_fa import TargetPdPixelFa
+from .center_pd_fa import CenterPdPixelFa
 
 
-class TargetPdPixelFaROC(TargetPdPixelFa):
+class CenterPdPixelFaROC(CenterPdPixelFa):
 
     def __init__(self,
                  conf_thrs: Union[int, List[float], np.ndarray] = 10,
@@ -24,8 +24,8 @@ class TargetPdPixelFaROC(TargetPdPixelFa):
                  match_alg: str = 'forloop',
                  second_match: str = 'none',
                  **kwargs: Any):
-        """Calculation of ROC using TargetPdPixelFa.
-            More details can be found at stdeval.metrics.TargetPdPixelFa.
+        """Calculation of ROC using CenterPdPixelFa.
+            More details can be found at stdeval.metrics.CenterPdPixelFa.
 
         Args:
             conf_thrs (Union[int, List[float], np.ndarray]): Confidence thresholds.
@@ -35,7 +35,7 @@ class TargetPdPixelFaROC(TargetPdPixelFa):
                     for the calculation
                 - If set to an 1d `array` of floats, will use the indicated thresholds in the array as
                     conf_thrs for the calculation.
-            Other parameters are same as TargetPdPixelFa.
+            Other parameters are same as CenterPdPixelFa.
         """
         self.conf_thrs = _adjust_conf_thr_arg(conf_thrs)
         super().__init__(dis_thrs=dis_thrs,

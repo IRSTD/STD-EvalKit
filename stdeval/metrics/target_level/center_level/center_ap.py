@@ -12,10 +12,10 @@ from stdeval.metrics.utils import (_TYPES, _adjust_conf_thr_arg,
                                    get_pred_coord_and_gray,
                                    second_match_method)
 
-from .target_pre_rec_f1 import TargetPrecisionRecallF1
+from .center_pre_rec_f1 import CenterPrecisionRecallF1
 
 
-class TargetAveragePrecision(TargetPrecisionRecallF1):
+class CenterAveragePrecision(CenterPrecisionRecallF1):
 
     def __init__(self,
                  conf_thrs: Union[int, List[float], np.ndarray] = 10,
@@ -27,7 +27,7 @@ class TargetAveragePrecision(TargetPrecisionRecallF1):
         Compute AP for dis_thrs, and Precision, Recall, F1 for each dis_thrs and conf_thrs.
         NOTE:
             - For conf thresholds, we refer to torchmetrics using the `>=` for conf thresholds.
-                https://github.com/Lightning-AI/torchmetrics/blob/3f112395b1ca0141ad2d8622628110fa363f9953/src/torchmetrics/functional/classification/precision_recall_curve.py#L22
+                https://github.com/Lightning-AI/torchmetrics/blob/3f112395b1ca0141ad2d8622628110fa363f9953/src/torchmetrics/functional/classification/precision_recall_curve.py#L246
 
             - For the calculation of AP, we refer to torchmetrics.
                 Step.1. Precision, Recall, we calculate the pr-curve from a multi threshold confusion matrix:
@@ -45,7 +45,7 @@ class TargetAveragePrecision(TargetPrecisionRecallF1):
                 - If set to an 1d `array` of floats, will use the indicated thresholds in the array as
                     conf_thrs for the calculation.
 
-            Other parameters are the same as stdeval.metrics.TargetPrecisionRecallF1.
+            Other parameters are the same as stdeval.metrics.CenterPrecisionRecallF1.
         """
 
         self.conf_thrs = _adjust_conf_thr_arg(conf_thrs)

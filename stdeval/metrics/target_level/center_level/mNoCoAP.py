@@ -64,7 +64,7 @@ def average_precision(recalls, precisions, mode='area'):
     return ap
 
 
-class NoCoTargets(object):
+class NoCoCenters(object):
     """Generate the ground truths for NoCo TODO: paper title not decided yet
 
     Args:
@@ -369,6 +369,7 @@ def eval_mnocoap(det_centroids,
 
 
 class mNoCoAP(BaseMetric):
+    #
 
     def __init__(self, conf_thr: float = 0.5, **kwargs: Any):
         super().__init__(**kwargs)
@@ -434,7 +435,7 @@ class mNoCoAP(BaseMetric):
 
         best_mnocoap = -np.inf
         gray_transform = transforms.Grayscale(num_output_channels=1)
-        noco_targets_instance = NoCoTargets()
+        noco_targets_instance = NoCoCenters()
         results = []
 
         for i in range(len(labels)):
