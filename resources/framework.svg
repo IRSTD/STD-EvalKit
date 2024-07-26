@@ -176,11 +176,11 @@
 			<text x="14.66" y="528.77" class="st5" v:langID="1033"><v:paragraph v:horizAlign="1"/><v:tabList/>Pixel-level Metrics</text>		</g>
 		<g id="shape32-66" v:mID="32" v:groupContext="shape" transform="translate(484.057,-202.158)">
 			<title>工作表.32</title>
-			<desc>Target-level Metrics</desc>
+			<desc>Center-level Metrics</desc>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
 			<v:textRect cx="106.299" cy="521.574" width="212.6" height="79.2215"/>
 			<rect x="0" y="481.964" width="212.598" height="79.2215" class="st4"/>
-			<text x="8.01" y="528.77" class="st5" v:langID="1033"><v:paragraph v:horizAlign="1"/><v:tabList/>Target-level Metrics</text>		</g>
+			<text x="8.01" y="528.77" class="st5" v:langID="1033"><v:paragraph v:horizAlign="1"/><v:tabList/>Center-level Metrics</text>		</g>
 		<g id="shape33-70" v:mID="33" v:groupContext="shape" transform="translate(712.246,-202.158)">
 			<title>工作表.33</title>
 			<desc>Computational complexity</desc>
