@@ -229,4 +229,5 @@ class CenterPdPixelFa(BaseMetric):
 
     def __repr__(self) -> str:
         return (f'{self.__class__.__name__}(conf_thr={self.conf_thr}, '
-                f'match_alg={self.match_alg})')
+                f'match_alg={self.match_alg}, '
+                f'second_match={self.second_match})')

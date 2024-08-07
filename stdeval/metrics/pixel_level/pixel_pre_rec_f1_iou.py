@@ -78,7 +78,7 @@ class PixelPrecisionRecallF1IoU(BaseMetric):
         if self.print_table:
             head = [
                 f'Precision-{self.conf_thr}', f'Recall-{self.conf_thr}',
-                f'F1-{self.conf_thr}', f'IOU-{self.conf_thr}'
+                f'F1-{self.conf_thr}', f'IoU-{self.conf_thr}'
             ]
             table = PrettyTable(head)
             table.add_row([
@@ -114,6 +114,10 @@ class PixelPrecisionRecallF1IoU(BaseMetric):
         df = pd.DataFrame(all_metric)
         df.columns = [
             f'Precision-{self.conf_thr}', f'Recall-{self.conf_thr}',
-            f'F1-{self.conf_thr}', f'IOU-{self.conf_thr}'
+            f'F1-{self.conf_thr}', f'IoU-{self.conf_thr}'
         ]
         return df
+    
+    def __repr__(self) -> str:
+        return (f'{self.__class__.__name__}(conf_thr={self.conf_thr})')
+

@@ -65,11 +65,12 @@ def convert2batch(labels: np.ndarray,
 
 
 def is_batchable(data: List[np.ndarray]) -> bool:
-    try:
-        data = np.stack(data, axis=0)
-        return True
-    except TypeError:
-        return False
+    batchable = False
+    base_shape = data[0].shape
+    for d in data:
+        if d.shape!= base_shape:
+            return False
+    return True
 
 
 def convert2format(labels: _TYPES, preds: _TYPES) -> Tuple[Iterable, Iterable]:
