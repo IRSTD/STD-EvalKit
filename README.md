@@ -13,7 +13,7 @@ English | [简体中文](README_zh-CN.md)
 
 ## Introduction
 
-STD EvalKit (Small Center Detection Evaluation Kit) is a library of evaluation metrics toolbox for infrared small target segmentation tasks.
+STD EvalKit (Small Target Detection Evaluation Kit) is a library of evaluation metrics toolbox for infrared small target segmentation tasks.
 
 We statistics the evaluation metrics in the field of infrared small target segmentation in recent years([statistical results](https://github.com/IRSTD/StatOnEvalMetrics)).
 
