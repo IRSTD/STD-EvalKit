@@ -91,7 +91,10 @@ if __name__ == '__main__':
         description='Small Target Detection Evaluation Kit',
         long_description=readme(),
         version='0.0.1',
+        author='Jian Song',
+        author_email='songj9507@outlook.com'
         packages=find_packages(),
+        install_requires=['pandas', 'prettytable', 'torchmetrics', 'pandas'],
         extras_require={'all': parse_requirements('requirements.txt')},
         keywords='computer vision, infrared small target detection tasks',
     )
