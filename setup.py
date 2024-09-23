@@ -92,9 +92,9 @@ if __name__ == '__main__':
         long_description=readme(),
         version='0.0.1',
         author='Jian Song',
-        author_email='songj9507@outlook.com'
+        author_email='songj9507@outlook.com',
         packages=find_packages(),
-        install_requires=['pandas', 'prettytable', 'torchmetrics', 'pandas'],
+        install_requires=['pandas', 'prettytable', 'torchmetrics', 'scikit-learn'],
         extras_require={'all': parse_requirements('requirements.txt')},
         keywords='computer vision, infrared small target detection tasks',
     )
