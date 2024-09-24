@@ -47,7 +47,8 @@ class CenterNormalizedIoU(PixelNormalizedIoU):
         self.dis_thrs = _adjust_dis_thr_arg(dis_thrs)
         self.match_alg = match_alg
         self.second_match = second_match
-        super().__init__(conf_thr=conf_thr, max_dets= max_dets, **kwargs)
+        self.max_dets = max_dets
+        super().__init__(conf_thr=conf_thr, **kwargs)
 
     @time_cost_deco
     def update(self, labels: _TYPES, preds: _TYPES) -> None:
