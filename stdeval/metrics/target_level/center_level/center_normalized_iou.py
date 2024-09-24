@@ -21,6 +21,7 @@ class CenterNormalizedIoU(PixelNormalizedIoU):
                  dis_thrs: Union[List[int], int] = [1, 10],
                  match_alg: str = 'forloop',
                  second_match: str = 'none',
+                 max_dets: int=1000,
                  **kwargs: Any):
         """We did the optimization.
             The task in the original code is to have only one target per image.
@@ -46,7 +47,7 @@ class CenterNormalizedIoU(PixelNormalizedIoU):
         self.dis_thrs = _adjust_dis_thr_arg(dis_thrs)
         self.match_alg = match_alg
         self.second_match = second_match
-        super().__init__(conf_thr=conf_thr, **kwargs)
+        super().__init__(conf_thr=conf_thr, max_dets= max_dets, **kwargs)
 
     @time_cost_deco
     def update(self, labels: _TYPES, preds: _TYPES) -> None:
@@ -57,7 +58,7 @@ class CenterNormalizedIoU(PixelNormalizedIoU):
                 pred.copy(), self.conf_thr)
             distances, mask_iou, bbox_iou = calculate_target_infos(
                 coord_label, coord_pred, gray_pred.shape[0],
-                gray_pred.shape[1])
+                gray_pred.shape[1], self.max_dets)
 
             if self.debug:
                 print(f'bbox_iou={bbox_iou}')

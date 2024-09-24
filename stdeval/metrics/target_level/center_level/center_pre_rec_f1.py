@@ -20,6 +20,7 @@ class CenterPrecisionRecallF1(BaseMetric):
                  dis_thrs: Union[List[int], int] = [1, 10],
                  match_alg: str = 'forloop',
                  second_match: str = 'none',
+                 max_dets: int = 1000,
                  **kwargs: Any):
         """Center-Level.
         TP: True Positive, GT is Positive and Pred is Positive, If Euclidean Distance < threshold, matched.
@@ -44,6 +45,10 @@ class CenterPrecisionRecallF1(BaseMetric):
                 based on the first-match principle. Defaults to 'forloop'
             second_match (str, optional): Second match algorithm for match pred and gt after distance matching. \
                 Support 'none', 'mask' and 'bbox'. 'none' means no secondary matching. Defaults to 'none'.
+            max_dets (int, optional): Maximum number of detections per image. \
+                The model has poor predictive performance in the early stages of training when it has not yet converged, \
+                    with too many FPs, which may make the metrics computation suffer from memory overflow.\
+                          Defaults to 1000.
         """
 
         super().__init__(**kwargs)
@@ -51,6 +56,7 @@ class CenterPrecisionRecallF1(BaseMetric):
         self.conf_thr = np.array([conf_thr])
         self.match_alg = match_alg
         self.second_match = second_match
+        self.max_dets = max_dets
         self.lock = threading.Lock()
         self.reset()
 
@@ -76,7 +82,7 @@ class CenterPrecisionRecallF1(BaseMetric):
                 pred.copy(), self.conf_thr)
             distances, mask_iou, bbox_iou = calculate_target_infos(
                 coord_label, coord_pred, gray_pred.shape[0],
-                gray_pred.shape[1])
+                gray_pred.shape[1], self.max_dets)
             if self.debug:
                 print(f'bbox_iou={bbox_iou}')
                 print(f'mask_iou={mask_iou}')

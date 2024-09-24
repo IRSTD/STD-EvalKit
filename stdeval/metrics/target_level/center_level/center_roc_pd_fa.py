@@ -23,6 +23,7 @@ class CenterPdPixelFaROC(CenterPdPixelFa):
                  dis_thrs: Union[List[int], int] = [1, 10],
                  match_alg: str = 'forloop',
                  second_match: str = 'none',
+                 max_dets: int=1000,
                  **kwargs: Any):
         """Calculation of ROC using CenterPdPixelFa.
             More details can be found at stdeval.metrics.CenterPdPixelFa.
@@ -42,6 +43,7 @@ class CenterPdPixelFaROC(CenterPdPixelFa):
                          conf_thr=0.5,
                          match_alg=match_alg,
                          second_match=second_match,
+                         max_dets = max_dets,
                          **kwargs)
         self.lock = threading.Lock()
         self.reset()
@@ -58,7 +60,7 @@ class CenterPdPixelFaROC(CenterPdPixelFa):
                     pred.copy(), conf_thr)
                 distances, mask_iou, bbox_iou = calculate_target_infos(
                     coord_label, coord_pred, gray_pred.shape[0],
-                    gray_pred.shape[1])
+                    gray_pred.shape[1], self.max_dets)
 
                 if self.debug:
                     print(f'bbox_iou={bbox_iou}')

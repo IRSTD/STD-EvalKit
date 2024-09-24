@@ -22,6 +22,7 @@ class CenterAveragePrecision(CenterPrecisionRecallF1):
                  dis_thrs: Union[List[int], int] = [1, 10],
                  match_alg: str = 'forloop',
                  second_match: str = 'none',
+                 max_dets: int=1000,
                  **kwargs: Any):
         """
         Compute AP for dis_thrs, and Precision, Recall, F1 for each dis_thrs and conf_thrs.
@@ -53,6 +54,7 @@ class CenterAveragePrecision(CenterPrecisionRecallF1):
                          conf_thr=0.5,
                          match_alg=match_alg,
                          second_match=second_match,
+                         max_dets=max_dets,
                          **kwargs)
         self.reset()
 
@@ -80,7 +82,7 @@ class CenterAveragePrecision(CenterPrecisionRecallF1):
 
                 distances, mask_iou, bbox_iou = calculate_target_infos(
                     coord_label, coord_pred, gray_pred.shape[0],
-                    gray_pred.shape[1])
+                    gray_pred.shape[1], self.max_dets)
 
                 if self.debug:
                     print(f'bbox_iou={bbox_iou}')

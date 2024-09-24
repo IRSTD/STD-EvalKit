@@ -12,7 +12,7 @@ from .misc import convert2gray
 
 def calculate_target_infos(coord_label: List[RegionProperties],
                            coord_pred: List[RegionProperties], img_h: int,
-                           img_w) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
+                           img_w, max_dets: int=1000) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
     """Calculate euclidean distances, mask iou, and bbox iou between label and pred for one image.
 
         Args:
@@ -20,13 +20,19 @@ def calculate_target_infos(coord_label: List[RegionProperties],
             coord_pred (List[RegionProperties]): measure.regionprops(pred)
             img_h (int): image.high
             img_w (int): image.width
+            max_dets (int, optional): Maximum number of detections per image. \
+                The model has poor predictive performance in the early stages of training when it has not yet converged, \
+                    with too many FPs, which may make the metrics computation suffer from memory overflow.\
+                          Defaults to 1000.
 
         Returns:
             np.ndarray: euclidean distances, mask iou, bbox iou between label and pred.
         """
 
     num_lbl = len(coord_label)  # number of label
-    num_pred = len(coord_pred)  # number of pred
+    # Hard code, Since mask-generated bboxes usually do not have a fixed confidence level, \
+    # only the first 1000 preds can be taken directly.
+    num_pred = len(coord_pred[: max_dets])  # number of pred
 
     if num_lbl * num_pred == 0:
         empty = np.empty((num_lbl, num_pred))
