@@ -119,3 +119,8 @@ Metric.update(labels=labels, preds=preds.sigmoid())
 precision, recall, f1_score, iou = Metric.get()
 ```
 For more details, please refer to <div><a href="./notebook/tutorials.ipynb">./notebook/tutorial.ipynb</a></div>
+
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=IRSTD/STD-EvalKit&type=Date)](https://www.star-history.com/#IRSTD/STD-EvalKit&Date)
